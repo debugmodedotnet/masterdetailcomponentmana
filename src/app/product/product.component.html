@@ -1,0 +1,10 @@
+<h2>Products</h2>
+<hr/>
+<button (click)="showGrid()">Show Grid</button>
+<button (click)="showList()">Show List</button>
+<app-product-grid (isDetialsDisplayedEvent)="showDetails($event)" 
+*ngIf="isGridDisplayed" [products]='products'></app-product-grid>
+<app-product-list (isDetialsDisplayedEvent)="showDetails($event)" 
+ *ngIf="!isGridDisplayed" [products]='products'></app-product-list>
+<app-product-details [productDetails]="productDetails" (isDetialsDisplayedEvent)="showDetails($event)"  
+*ngIf="isDetailsDisplayed"></app-product-details>
